@@ -32,6 +32,9 @@ STOP_LOSS = 0.92   # exit when position value <= 92% of cost
 TAKE_PROFIT = 1.25  # exit when position value >= 125% of cost
 # Bars to wait after an exit before the symbol may re-enter on a still-up
 # trend without a fresh cross (0 = no such re-entry: a fresh cross is needed).
+# Kept at 0 deliberately: local replay tests showed cooldown re-entry only
+# added churn (more trades, worse PnL) in choppy windows, so an exit here
+# always means "wait for a new cross up".
 REENTRY_BARS = 0
 MAX_SLIPPAGE_BPS = 100
 
